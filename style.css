@@ -1,0 +1,605 @@
+:root {
+    --top-bar-height: 80px;
+    --desc-font: 'Space Grotesk';
+    --fonts: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+    font-family: var(--fonts);
+}
+
+div, a {
+    transition: 0.2s;
+}
+
+.desc-font,
+.desc-font *,
+p {
+    font-family: var(--desc-font), var(--fonts);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+a.link {
+    display: inline-block;
+    border: solid 1px #afd7fd;
+    border-radius: 10px;
+    background-color: #afd7fd22;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+a.link::after {
+    content: "🔗";
+    display: inline-block;
+    margin-left: 3px;
+    transition: 0.2s;
+}
+
+a.link[target="_blank"]::after {
+    content: "↗";
+}
+
+a.link:hover:not([disabled]) {
+    background-color: #afd7fd;
+    color: black;
+}
+
+a.link[target="_blank"]:hover::after {
+    transform: translate(1px, -1px);
+    animation: link-after-point 1s ease-in-out 0s infinite forwards;
+}
+
+a[disabled], button[disabled], .button[disabled] {
+    pointer-events: none;
+    opacity: 0.8;
+    filter: brightness(0.5);
+}
+
+@keyframes link-after-point {
+    0%, 100% {
+        transform: translate(-1px, 1px);
+    }
+    50% {
+        transform: translate(1px, -1px);
+    }
+}
+
+button.disabled, .button.disabled, a.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+button h1,
+button p,
+.button h1,
+.button p,
+a h1,
+a p {
+    margin: 0;
+    color: #000000aa;
+}
+
+button, .button {
+    background-color: #afd7fd;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 6px;
+}
+
+button:hover, .button:hover {
+    background-color: #c5e3ff;
+}
+
+button:active, .button:active {
+    background-color: #87b3dc;
+}
+
+button.large, .button.large {
+    font-size: 150%;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+button.small, .button.small {
+    font-size: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 16px;
+    margin: 3px;
+}
+
+.img,
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.cant-touch-this {
+    pointer-events: none;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.flex-break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.tiny-subtitle {
+    font-size: 90%;
+    margin: 0;
+    color: gray;
+    font-style: italic;
+}
+
+.top-bar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--top-bar-height);
+    z-index: 1030;
+    background-color: #00000011;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.top-bar>div {
+    align-self: center;
+}
+
+.top-bar-title {
+    white-space: nowrap;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.top-bar-title:hover {
+    text-shadow: 0px 0px 4px #00000044;
+}
+
+.top-bar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.top-bar-link-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    height: 100%;
+}
+
+.top-bar-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    white-space: nowrap;
+    align-self: center;
+    text-decoration: underline solid 3px transparent;
+    text-align: center;
+}
+
+.top-bar-link:hover:not(.disabled) {
+    /* text-decoration-color: #ffffff44; */
+    background-color: #00000011;
+}
+
+.top-bar-link * {
+    margin: 0;
+}
+
+.top-bar-link p .mini {
+    display: inline-block;
+    text-align: left;
+    vertical-align: super;
+    font-size: 50%;
+}
+
+.top-bar-link.disabled {
+    cursor: default;
+}
+
+.top-bar-menu {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.top-bar-menu>ion-icon {
+    font-size: 30px;
+    transition: transform 0.3s;
+}
+
+.top-bar-menu:hover>ion-icon {
+    transform: rotate(180deg) scale(1.1);
+}
+
+.main-content {
+    margin-top: calc(var(--top-bar-height)*1.2);
+}
+
+.banner {
+    width: 100%;
+    height: calc(100vh - var(--top-bar-height));
+    min-height: max-content;
+    overflow: hidden;
+}
+
+.banner * {
+    z-index: 20;
+}
+
+.banner-content {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-bg-effect {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 15;
+    pointer-events: none;
+    margin: 0px;
+    padding: 0px;
+    opacity: 0.5;
+    background-image: url("smartclicks_cover.jpeg");
+}
+
+.banner-link-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.course-card {
+    padding: 30px;
+    border-radius: 30px;
+    background-color: #00000011;
+    width: fit-content;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.course-card.add,
+.course-card.join {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-card.add.toggled {
+    display: none;
+}
+
+.course-card.add ion-icon,
+.course-card.join ion-icon {
+    font-size: 300%;
+}
+
+.course-card.add p {
+    display: none;
+}
+
+.course-card.add:hover p {
+    display: block;
+}
+
+.course-card .course-name {
+    font-size: 2em;
+    margin: 0;
+}
+
+.bottom-line {
+    margin-top: 10px;
+    background-color: #00000011;
+    border-radius: 30px;
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-self: right;
+    width: fit-content;
+}
+
+.course-card .bottom-line {
+    width: unset;
+}
+
+.bottom-line p {
+font-size: 150%;
+margin: 0;
+}
+
+.bottom-line ion-icon {
+    font-size: 150%;
+    margin: 0;
+    margin-right: 5px;
+}
+
+.course-card .course-code {
+    margin: 0;
+    margin-top: 20px;
+    color: gray;
+    text-align: right;
+}
+
+.course-card.create {
+    display: none;
+}
+
+.course-card.create.toggled {
+    display: block;
+}
+
+.course-card input:not([type=submit]), .course-card select {
+    background-color: #00000011;
+    border: solid 1px transparent;
+    margin: 1px;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.course-card input:focus{
+    outline: none;
+    border: solid 1px #00000088;
+}
+
+.course-card .submit-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.course-card .add-students-label {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.course-card .add-student {
+    margin-right: 10px;
+    border-radius: 10px;
+    width: min-content;
+}
+
+.course-card .added-student-emails {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    max-width: 300px;
+    margin: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    background-color: #00000011;
+    padding: 10px;
+}
+
+.added-student-emails span {
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.added-student-emails span:hover {
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
+
+.course-card .added-student-emails:not(:has(*)) {
+    display: none;
+}
+
+.error {
+    color: red;
+}
+
+.join-class-btn {
+    border-radius: 20px;
+    background-color: #00000011;
+    padding: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 20px;
+}
+
+.join-class-btn:hover {
+    background-color: #00000022;
+}
+
+.lesson-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00000011;
+}
+
+.lesson-item {
+    width: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #00000011;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.lesson-item.create {
+    justify-content: center;
+    width: fit-content;
+}
+
+.lesson-item.create ion-icon {
+    font-size: 1em;
+}
+
+.lesson-item:hover {
+    background-color: #00000022;
+}
+
+.lesson-title {
+    font-size: 200%;
+}
+
+.lesson-item p {
+    text-align: right;
+}
+
+input.button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.lesson-section {
+    margin: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #00000011;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quiz-question {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #00000011;
+    margin: 10px;
+    min-width: 350px;
+}
+
+.quiz-question:not(.current) {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.answer-choice-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.answer-choice {
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+    font-size: 150%;
+}
+
+.answer-choice-container:has(.chosen) .answer-choice:not(.chosen) {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.answer-choice.chosen {
+    outline: solid 2px blue;
+    font-weight: 800;
+}
+
+.answer-choice.eliminated:not(.chosen) {
+    opacity: 0.7;
+    scale: 0.8;
+    text-decoration: line-through;
+}
+
+/* Charlie Added Below */
+
+.c_content {
+    margin:20px;
+}
+
+.c_footer {
+    padding:30px;
+    background-color:#5c5c5c;
+    color:white;
+    font-size:24px;
+    text-align:center;
+}
+
+.c_header {
+    font-size:18px;
+    font-weight:bold;
+}

@@ -1,0 +1,27 @@
+<div class="top-bar">
+    <a class="top-bar-title" href="/">
+        <h1>
+            SmartClicks
+        </h1>
+    </a>
+    <div class="top-bar-right">
+        <div class="top-bar-link-container">
+            {% if user %}
+            <a class="top-bar-link" href="/dashboard">
+                <p>DASHBOARD</p>
+            </a>
+            <a class="top-bar-link" href="/logout">
+                <p>
+                    LOG OUT
+                </p>
+            </a>
+            {% else %}
+            <a class="top-bar-link" href="/login">
+                <p>
+                    LOG IN
+                </p>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>

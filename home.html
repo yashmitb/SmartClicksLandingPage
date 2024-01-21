@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>SmartClicks | Advanced Personalized Learning</title>
+        <link rel="stylesheet" href="style.css"/>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- <script src="/static/js/script.js"></script> -->
+    </head>
+    
+  <body>
+
+    <div class="top-bar">
+        <a class="top-bar-title" href="/">
+            <h1>
+                SmartClicks
+            </h1>
+        </a>
+        <div class="top-bar-right">
+            <!-- <div class="top-bar-link-container">
+                {% if user %}
+                <a class="top-bar-link" href="/dashboard">
+                    <p>DASHBOARD</p>
+                </a>
+                <a class="top-bar-link" href="/logout">
+                    <p>
+                        LOG OUT
+                    </p>
+                </a>
+                {% else %}
+                <a class="top-bar-link" href="/login">
+                    <p>
+                        LOG IN
+                    </p>
+                </a>
+                {% endif %}
+            </div> -->
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="banner">
+            <div class="banner-content">
+                <h1 style="font-size:36px">
+                    Unleashing the Power of AI for Personalized Education, Click by Click
+                </h1>
+                <div class="banner-link-container">
+                    <!-- {% if user %} -->
+                    <!-- <a class="button large" href="/dashboard"><p>LEARN MORE →</p></a> -->
+                    <!-- {% else %} -->
+                    <!-- <a class="button large" href="/login"><p>GET STARTED →</p></a> -->
+                    <!-- {% endif %} -->
+                    <!-- <div class="flex-break"></div>
+                    <a class="button small"><p>LEARN MORE</p></a> -->
+                </div>
+            </div>
+            <div class="banner-bg-effect">
+
+            </div>
+        </div>
+        <div class="c_content">
+            <h3>Meet SmartClicks: a education management system that combines hardware and software innovations to bring personalized, interactive learning outside of the classroom.</h3>
+            
+            <!-- Embed Video Here -->
+
+            <div class="center-flex">
+                <a href="https://devpost.com/software/smartclicks" target="_blank"><button class="large">Check it out on Devpost</button></a>
+            </div>
+            
+            <div class="course-card"><span class="c_header">Inspiration</span><br>
+                The inspiration behind SmartClicks, emerged from a desire to revolutionize the traditional learning experience. We identified a need for a tool that could provide personalized learning opportunities for elementary school students, taking into account their individual learning habits. The aim was to create a platform that not only records and delivers lectures online but also adapts the content based on each student's unique learning styles.</div>
+
+            <div class="course-card">
+                <span class="c_header">Research</span><br>
+                Our team put in a lot of effort over the hackathon to really understand the challenges faced by students with ADHD or motor problems. We dug into research papers and articles to wrap our heads around issues like problems with attention, focus, or coordination that make learning difficult. That research was key for coming up with SmartClicks - we wanted whatever solution we built to really address the needs highlighted in the latest studies. We weren't just building a piece of tech to build tech - we were aiming to combine research and social good into a practical tool for helping kids who learn differently. That drive came out of both our team's creativity and our commitment to evidence-based solutions that make a genuine difference.
+                <br><br>
+                Research: <a style="text-decoration:underline" href="https://docs.google.com/document/d/e/2PACX-1vSxtciw8rPn7fMqlggcEJiy0tbFfI_HSSm85gPcXZNW-gm4ohcrRDYayIcXXytZ1W62SoGqtvXGZ23k/pub" target="_blank">https://docs.google.com/document/d/e/2PACX-1vSxtciw8rPn7fMqlggcEJiy0tbFfI_HSSm85gPcXZNW-gm4ohcrRDYayIcXXytZ1W62SoGqtvXGZ23k/pub</a>
+            </div>
+
+            <div class="course-card">
+                <span class="c_header">What It Does</span><br>
+                The SmartClicks solution integrates multiple complex technical components, including cloud-based AI enabled by Cloudflare, user authentication via Auth0, and custom Arduino hardware button systems, into a seamless platform allowing teachers to upload lectures and create interactive virtual classrooms while enabling students – particularly those with learning needs – to more actively engage with academic content. SmartClicks uses AI to intelligently convert a class lecture recording into summaries and multiple choice questions. The physical joystick buttons provide an interactive means of answering the questions, where students are able to visualize their thought and elimination process. This not only alleviates work on the teacher’s part, and provides an engaging at-home practice to concepts learned in class, but also allows the AI to provide personalized questions and summaries specific to how each student learns and what they still need to master in the class.
+            </div>
+
+            <div class="course-card">
+                <span class="c_header">How We Built It</span><br>
+                The SmartClicks system is powered by an intricate integration of multiple technologies working in unison. User authentication is handled securely through Auth0 protocols, ensuring only registered teachers and students have access. Video lectures and class content are uploaded by teachers to cloud servers leveraging Cloudflare AI algorithms that can process information in almost no time. This enables advanced features like searchable transcripts and analytics.
+                <br><br>
+                One of the most innovative elements is the custom hardware device equipped with large joysticks, intended to develop motor skills and hand eye coordination. The feedback enabled device equipped with buzzers and LEDs make it that much more engaging.
+            </div>
+
+            <div class="course-card">
+                <span class="c_header">Challenges</span>
+                Several challenges were encountered during the development of SmartClicks. Our team dealt with ensuring the accuracy of Speech-to-Text technology, considering the rapid pace at which teachers often speak. The incorporation of new platforms such as Auth0 and MongoDB presented initial challenges due to the complex nature of their integration into our project. However, as our team navigated through these unfamiliar territories step by step, the once intricate concepts gradually became clearer. Despite the initial hurdles, we were able to overcome these challenges.
+            </div>
+
+            <div class="course-card">
+                <span class="c_header">Accomplishments That We're Proud Of</span>
+                This project was our first time integrating Auth0, MongoDB Atlas, Cloudflare, and pipelines, and while we hit many issues integrating these platforms, we were able to solve them and implement all of these into this single project. We were also very proud of having our idea finalized before 8am in the morning (we usually spend so long trying to think of an idea), and we actually got some sleep on the first night! We were also able to successfully implement our ambitious plan for the AI to convert speech to text, then summarize twice, and then generate questions, all very accurately.
+            </div>
+
+            <div class="course-card">
+                <span class="c_header">What's Next</span>
+                The future of SmartClicks involves refining the Speech-to-Text accuracy, implementing guidelines for teachers, and finding more ways to make the hardware interaction even more intuitive. We envision expanding the platform's capabilities to include more features that enhance the overall learning experience and its ability to improve education for disadvantaged students. SmartClicks aims to continue unleashing the power of AI for personalized education, click by click.</p>
+            </div>
+            
+            <br>
+            <p style="text-align:center; font-size:12px">This webpage is for informational purposes only. For our product demo, please see the video above.</p>
+
+        </div>
+        <div class="c_footer">
+            <p>SmartClicks: Unleashing the Power of AI for Personalized Education, Click by Click</p>
+        </div>
+    </div>
+  </body>
+</html>
